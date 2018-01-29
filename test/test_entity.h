@@ -24,7 +24,7 @@ SOFTWARE.*/
 #define ENUMGROUP_TESTING_H
 #define BOOST_TEST_MODULE enum_group_test_module
 
-#include "EnumGroup.h"
+#include "../src/EnumGroup.h"
 
 ENUM_GROUP_START( TestGroup )
     ADD_ENUM( Enum0, ITEM00, ITEM01 )

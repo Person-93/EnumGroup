@@ -21,7 +21,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.]]
 
 cmake_minimum_required ( VERSION 3.9 )
-include ( "helpers.cmake" )
+include ( "cmake/helpers.cmake" )
 
 # include hunter
 download_and_include ( "https://raw.githubusercontent.com/hunter-packages/gate/master/cmake/HunterGate.cmake"
@@ -40,7 +40,7 @@ find_package ( Boost REQUIRED COMPONENTS unit_test_framework )
 hunter_add_package ( Boost )
 find_package ( Boost CONFIG REQUIRED )
 
-add_executable ( Tests EnumGroup.h ForEachMacro.h test_entity.h tests.cpp )
+add_executable ( Tests src/EnumGroup.h src/ForEachMacro.h test/test_entity.h test/tests.cpp )
 target_link_libraries ( Tests Boost::unit_test_framework Boost::boost )
 target_compile_definitions ( Tests
                              INTERFACE BOOST_TEST_TOOLS_DEBUGGABLE )
