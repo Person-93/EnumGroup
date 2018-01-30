@@ -29,6 +29,19 @@ All of the Enums must be in between these two macros and
 IMPORTANT NOTE: The generated classes are not actually enums. If you use the stl type traits to see if it is an enum, it will say that it is not.  
 Instead, you should check if it extends `EnumGroup::Item`.
 
+## Dependencies
+This project depends on cmake and Boost.  
+Boost used to generate human readable type names for the error messages.  
+In the future, I plan to make this optional.  
+If the option is off, the error messages will be compiler-specific and might be indecipherable.
+
+When you run cmake for the first time, it will download boost for you. Make sure to include the boost headers when
+linking into your project.  
+If you don't want to run cmake, just install boost on your machine yourself.
+
+Boost is also necessary to run the test cases, but you don't need to do that unless you plan on making changes to this project.  
+
+## Details
 #### Outer Namespace 
 This will add the namespace `Days`. This namespace will contain:
 * Item: A class called `Item`
