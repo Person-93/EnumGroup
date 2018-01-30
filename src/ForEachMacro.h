@@ -24,8 +24,8 @@ SOFTWARE.*/
 #define ENUM_GROUP_FOR_EACH_MACRO_H
 
 /**
- * This file contains a macro that acts as a for each to iterate over variadic arguments
- * Based on this link here
+ * This file contains macros that act as for each to iterate over variadic arguments
+ * Based on an article by Daniel Hardman at Code Craft
  * @link https://codecraft.co/2014/11/25/variadic-macros-tricks/
  */
 
