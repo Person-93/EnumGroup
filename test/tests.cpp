@@ -24,6 +24,10 @@ SOFTWARE.*/
 
 using namespace boost::unit_test_framework;
 
+BOOST_AUTO_TEST_CASE( DerivedFromEnumGroupItem ) { // NOLINT
+    BOOST_CHECK(( std::is_base_of<EnumGroup::Item, TestGroup::Item>::value ));
+}
+
 //region ComparisonOperators
 BOOST_AUTO_TEST_SUITE( ComparisonOperators ) // NOLINT
 
