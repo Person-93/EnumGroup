@@ -29,7 +29,7 @@ SOFTWARE.*/
 #include <iostream>
 
 // TODO add method to check if a EnumGroup::Item belongs to a specific group
-// TODO document the macro. Doxygen? Is there some way to document the generated classes?
+// TODO Is there some way to document the generated classes with DoxyGen?
 // TODO make boost dependency optional when not running test cases
 
 namespace EnumGroup {
