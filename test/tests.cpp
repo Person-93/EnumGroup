@@ -76,7 +76,7 @@ BOOST_AUTO_TEST_SUITE( Assignment, *depends_on( "ComparisonOperators" )) // NOLI
 
     BOOST_AUTO_TEST_CASE( SpecificToOtherSpecific ) { // NOLINT
         TestGroup::Enum0::Item specific;
-        TestGroup::Enum1::Item otherSpecific = TestGroup::Enum0::ITEM00;
+        TestGroup::Enum1::Item otherSpecific = TestGroup::Enum1::ITEM10;
         BOOST_CHECK_THROW( { specific = otherSpecific; }, TestGroup::Error );
     }
 
