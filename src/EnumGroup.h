@@ -30,7 +30,7 @@ SOFTWARE.*/
 
 // TODO add method to check if a EnumGroup::Item belongs to a specific group
 // TODO Is there some way to document the generated classes with DoxyGen?
-// TODO make boost dependency optional when not running test cases
+// TODO use boost macros instead of my own implementation of FOR_EACH
 
 namespace EnumGroup {
     /**
