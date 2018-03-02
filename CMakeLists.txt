@@ -25,13 +25,7 @@ include ( "cmake/helpers.cmake" )
 
 option ( ENUM_GROUP_WITH_TESTS "Make a target to run the tests" ON )
 
-# invlude hunter
-download_and_include ( "https://raw.githubusercontent.com/hunter-packages/gate/master/cmake/HunterGate.cmake"
-                       "${CMAKE_CURRENT_BINARY_DIR}/HunterGate.cmake" )
-huntergate (
-        URL "https://github.com/ruslo/hunter/archive/v0.19.228.tar.gz"
-        SHA1 "5f8bde642d44d2ef652c917fa6b36dbc5f693d51"
-)
+start_hunter ()
 
 project ( EnumGroup VERSION 0.0.1 )
 set ( CMAKE_CXX_STANDARD 17 )

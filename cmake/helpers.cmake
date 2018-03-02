@@ -32,3 +32,12 @@ function ( download_and_include SRC DEST )
     endif ()
     include ( ${DEST} )
 endfunction ()
+
+macro ( start_hunter )
+    download_and_include ( "https://raw.githubusercontent.com/hunter-packages/gate/master/cmake/HunterGate.cmake"
+                           "${CMAKE_CURRENT_BINARY_DIR}/HunterGate.cmake" )
+    huntergate (
+            URL "https://github.com/ruslo/hunter/archive/v0.19.228.tar.gz"
+            SHA1 "5f8bde642d44d2ef652c917fa6b36dbc5f693d51"
+    )
+endmacro ()
