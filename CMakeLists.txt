@@ -41,7 +41,7 @@ find_package ( Boost CONFIG REQUIRED )
 add_library ( EnumGroup INTERFACE )
 target_include_directories ( EnumGroup INTERFACE
                              $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
-                             $<INSTALL_INTERFACE:include/EnumGroup>
+                             $<INSTALL_INTERFACE:$<INSTALL_PREFIX>/include/EnumGroup>
                              )
 target_link_libraries ( EnumGroup INTERFACE Boost::boost )
 
@@ -52,10 +52,7 @@ if ( ENUM_GROUP_WITH_TESTS )
 endif ()
 
 include ( GenerateExportHeader )
-install ( TARGETS EnumGroup EXPORT EnumGroupTargets
-          RUNTIME DESTINATION bin
-          INCLUDES DESTINATION include/EnumGroup/
-          )
+install ( TARGETS EnumGroup EXPORT EnumGroupTargets )
 install ( FILES src/EnumGroup.h src/ForEachMacro.h DESTINATION include/EnumGroup )
 
 include ( CMakePackageConfigHelpers )
@@ -72,12 +69,9 @@ configure_file ( cmake/EnumGroupConfig.cmake
 
 set ( ConfigPackageLocation lib/cmake/EnumGroup )
 install ( EXPORT EnumGroupTargets
-          FILE
-          EnumGroupTargets.cmake
-          NAMESPACE
-          EnumGroup::
-          DESTINATION
-          ${ConfigPackageLocation}
+          FILE EnumGroupTargets.cmake
+          NAMESPACE EnumGroup::
+          DESTINATION ${ConfigPackageLocation}
           )
 install (
         FILES
