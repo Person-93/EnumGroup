@@ -1,0 +1,16 @@
+language: cpp
+compiler:
+  - gcc
+  - clang
+# TODO add osx environment to .travis.yml
+os: linux
+install:
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" ..
+script:
+  - cmake --build . --target Tests -- -j 2
+  - ./Tests --logger=HRF,all --report_format=HRF --show_progress=no
+cache:
+  directories:
+    - /home/travis/.hunter

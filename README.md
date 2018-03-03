@@ -1,4 +1,4 @@
-# EnumGroup
+# EnumGroup [![Build Status](https://travis-ci.org/Person-93/EnumGroup.svg?branch=master)](https://travis-ci.org/Person-93/EnumGroup)
 The goal of this project is to make a group of enum-like objects that can be used interchangeably.
 
 If you want to make an enum for the days of the week, you might do something like this:
