@@ -8,6 +8,6 @@ cache:
 install:
   - cmd: mkdir build
   - cmd: cd build
-  - cmd: cmake -DCMAKE_BUILD_TYPE=Debug -G "Visual Studio 12 2013" ..
+  - cmd: cmake -G "Visual Studio 12 2013" ..
 build: cmake --build . --target Tests -- -j 2
 test: Tests.exe --logger=HRF,all --report_format=HRF --show_progress=no
