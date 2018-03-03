@@ -1,6 +1,9 @@
 skip_tags: true
 image: Visual Studio 2015
 platform: AnyCPU
+configuration:
+  - Debug
+  - Release
 init:
   - cmd: set APPVEYOR_CACHE_SKIP_SAVE=true
 cache:
