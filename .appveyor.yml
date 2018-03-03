@@ -1,0 +1,16 @@
+skip_tags: true
+image: Visual Studio 2015
+cache: # TODO enter the .hunter directory for the cache
+init:
+  # get the compiler into the PATH variable
+  - reg Query "HKLM\Hardware\Description\System\CentralProcessor\0" | find /i "x86" > NUL && set OS=32BIT || set OS=64BIT
+  - if %OS%==32BIT call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86
+  - if %OS%==64BIT call "C:\Program Files\Microsoft SDKs\Windows\v7.1\Bin\SetEnv.cmd" /x64
+  - if %OS%==64BIT call "C:\Program Files (x86)\Microsoft Visual Studio 14.0\VC\vcvarsall.bat" x86_amd64
+install:
+  - # TODO do i need to add cmake?
+  - cmd: mkdir build
+  - cmd: cd build
+  - cmd: cmake -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" ..
+build: cmake --build . --target Tests -- -j 2
+test: Tests.exe --logger=HRF,all --report_format=HRF --show_progress=no
