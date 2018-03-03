@@ -1,6 +1,6 @@
 skip_tags: true
 image: Visual Studio 2015
-platform: AnyCPU
+platform: ~
 configuration:
   - Debug
   - Release
