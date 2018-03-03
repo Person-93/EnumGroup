@@ -5,7 +5,7 @@ configuration:
   - Debug
   - Release
 init:
-  - cmd: set APPVEYOR_CACHE_SKIP_SAVE=true
+  - cmd: set APPVEYOR_SAVE_CACHE_ON_ERROR=true
 cache:
   - C:\.hunter
 install:
